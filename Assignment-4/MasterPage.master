@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" EnableTheming="true" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!-- Compiled and minified JavaScript -->
+      <script src="jquery-3.3.1.min.js"></script>
+      <script type="text/javascript" src="materialize.min.js"></script>
+
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+     
+</head>
+<body onload="Materialize.showStaggeredList('#staggered-test'),Materialize.showStaggeredList('#staggered-test2')">
+    <form id="form1" runat="server">
+        <div>
+            <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo"><img src="Logo.png" class="hide-on-small-only" width="60px" /></a>
+                <a href="#" class="brand-logo center">
+                    Soccer League
+                </a>
+                <a href="#" class="brand-logo right"><img src="Logo.png" class="hide-on-med-and-down" width="60px" /></a>
+            </div>
+            </nav>
+        </div>
+        
+        
+        <div class=" #ffecb3 amber lighten-4 hoverable">
+            <div class="row">
+                <div class="col l2">
+                    <h5><asp:HyperLink runat="server" ID="lnkHome" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></h5>
+                </div>
+                <asp:Repeater runat="server" ID="menu" DataSourceID="SiteMapDataSource">
+                    <ItemTemplate>
+                        <div class="col l2">
+                            <h5><asp:HyperLink runat="server" NavigateUrl='<%# Eval("Url") %>'><%# Eval("Title") %></asp:HyperLink></h5>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                
+            <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" ShowStartingNode="false" />
+                <asp:LoginName ID="LoginName1" runat="server" /> - <asp:LoginStatus ID="LoginStatus1" runat="server" />
+            </div>
+        </div>
+
+
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+        <!--<footer class="page-footer">
+          <div class="footer-copyright center">
+            <div class="container">
+            © 2018 Copyright Soccer League
+                </div>
+          </div>
+        </footer>-->
+                
+                <footer class="page-footer red lighten-1" style="padding-top: 0px;">
+            <div class="footer-copyright red lighten-1">
+                <div class="row center">
+                    <div class="col s12 m6 l8">
+                        <span class="white-text"><b>© 2018 Soccer League, All Rights Reserved.</b></span>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <span class="white-text"><b>Developed By : <a target="_blank" href="https://plus.google.com/+HarshTiwar/about" class="white-text">Harsh Tiwar</a></b></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 center hide-on-med-and-up">
+                <span class="white-text"><b>Developed By : <a target="_blank" href="https://plus.google.com/+HarshTiwar/about" class="white-text">Harsh Tiwar</a></b></span>
+            </div>
+        </footer>
+
+            
+
+    </form>
+</body>
+    <script type="text/javascript">
+
+        //modal intialization
+        $(document).ready(function () {
+            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal({
+                dismissible: false,
+            });
+            $('select').material_select();
+        });
+
+        //date-picker intialization
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: true // Close upon selecting a date,
+        });
+    </script>
+</html>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Home.aspx" title="Home" CssClass="collapsible-header" description="HomePage">
+    <siteMapNode url="~/Clubs.aspx" CssClass="collapsible-body" title="Clubs"  description="Clubs" />
+    <siteMapNode url="~/Add_Club.aspx" CssClass="collapsible-body" title="Add Clubs"  description="Add Clubs" />
+    <siteMapNode url="~/Results.aspx" CssClass="collapsible-body" title="Results"  description="Results" />
+    <siteMapNode url="~/Match_Scheduling.aspx" CssClass="collapsible-body" title="Match Scheduling"  description="Match Scheduling" />
+    <siteMapNode url="~/Setuptheme.aspx" CssClass="collapsible-body" title="Setup Theme"  description="Theme" />
+  </siteMapNode>
+</siteMap>
